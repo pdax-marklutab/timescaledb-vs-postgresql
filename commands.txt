@@ -1,0 +1,20 @@
+Steps
+0. Run timescale container's terminal
+1. psql --username=timescaledb
+2. \o /tmp/daterange.txt
+3. EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON) SELECT * FROM TRANSACTIONS WHERE CREATED_AT >= '10/10/2017 05:00:00' AND CREATED_AT < '01/10/2021 09:00:00';
+4. \o
+5. docker cp 98e22f4a4f49640a7bf1ea53d29f05e76caaf9e63844c3556f2fdb0340cd1242:/tmp/daterange.txt  ./results/ts
+6. Clean contents of result using https://www.textcleanr.com/# (Remove +)
+7. Copy cleaned results and SQL Query to https://tatiyants.com/pev/
+
+Steps Postgres
+
+0. Run Postgres container's terminal
+1. psql --username=postgres
+2. \o /tmp/daterange.txt
+3. EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON) SELECT * FROM TRANSACTIONS WHERE CREATED_AT >= '10/10/2017 05:00:00' AND CREATED_AT < '01/10/2021 09:00:00';
+4. \o
+5. docker cp ef226b6e8815776b766ede0ccd1d0233ff12f06366f1c403d369c70092f3c1ab:/tmp/daterange.txt  ./results/pg
+6. Clean contents of result using https://www.textcleanr.com/# (Remove +)
+7. Copy cleaned results and SQL Query to https://tatiyants.com/pev/
